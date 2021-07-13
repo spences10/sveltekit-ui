@@ -1,14 +1,45 @@
 <script>
-  import { slide } from 'svelte/transition'
+  import { slide } from '$lib/slide'
   export let buttonText
   export let isOpen
 </script>
 
-<div>
-  <button on:click={() => (isOpen = !isOpen)}>{buttonText}</button>
-  {#if isOpen}
-    <div transition:slide>
-      <slot />
-    </div>
-  {/if}
+<button on:click={() => (isOpen = !isOpen)}>
+  <span class:isOpen>▲</span>{buttonText}</button
+>
+<div
+  class="accordian-content"
+  use:slide={{ isOpen, duration: 200 }}
+  on:animationEnd={() => {}}
+>
+  <div class="wrapper">
+    <slot />
+  </div>
 </div>
+
+<style>
+  .wrapper {
+    padding: 20px;
+  }
+  button {
+    display: block;
+    border: 0;
+    width: 100%;
+    text-align: left;
+    border: solid 1px #333;
+    margin: 0;
+  }
+  span {
+    margin-right: 5px;
+    display: inline-block;
+    transform: rotate(0.25turn);
+    transition: 0.3s ease;
+  }
+  .isOpen {
+    transition: rotate(0.5turn);
+  }
+  .accordian-content {
+    border: solid 1px #333;
+    border-top: 0;
+  }
+</style>
