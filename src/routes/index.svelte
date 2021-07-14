@@ -19,10 +19,12 @@
 
 <h2>Toast</h2>
 
-<Toast />
+<Toast duration={3000} />
 
-<button on:click={() => (toast.send('Hello, world!'+Math.random()), false)}
-  >New toast</button
+<button
+  on:click={() => (
+    toast.send('Hello, world!' + Math.random()), false
+  )}>New toast</button
 >
 
 <hr />

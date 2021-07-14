@@ -11,8 +11,8 @@ const newToast = () => {
 
   function remove() {
     update(state => {
-      let [first, ...rest] = state
-      return [first, ...rest.slice(1)]
+      let [_first, ...rest] = state
+      return [...rest]
     })
   }
   return {
