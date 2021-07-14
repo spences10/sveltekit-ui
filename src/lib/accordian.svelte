@@ -36,7 +36,7 @@
     transition: 0.3s ease;
   }
   .isOpen {
-    transition: rotate(0.5turn);
+    transform: rotate(0.5turn);
   }
   .accordian-content {
     border: solid 1px #333;
