@@ -2,23 +2,30 @@
   import Accordian from '$lib/accordian.svelte'
   import Field from '$lib/field.svelte'
   import Markdown from '$lib/markdown.svelte'
-  import Portal from '$lib/portal.svelte'
+  import Modal from '$lib/modal.svelte'
   import SearchFilter from '$lib/search-filter.svelte'
   import Toggle from '$lib/toggle.svelte'
-  let isToggled = false
 
+  let isToggled = false
   let items = ['svelte', 'react', 'vue', 'angular']
   let search = ''
   let markdownText = ''
+  let isModalOpen = false
 </script>
 
 <h1>Welcome to SvelteKit UI</h1>
 
-<h2>Portal</h2>
+<h2>Modal</h2>
 
-<Portal>
+<Modal {isModalOpen}>
   <Markdown bind:markdownText />
-</Portal>
+</Modal>
+<button
+  on:click={() => (isModalOpen = !isModalOpen)}
+  on:blur={() => (isModalOpen = !isModalOpen)}>Open Modal</button
+>
+
+{isModalOpen}
 
 <hr />
 
