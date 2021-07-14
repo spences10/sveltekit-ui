@@ -4,6 +4,8 @@
   import Markdown from '$lib/markdown.svelte'
   import Modal from '$lib/modal.svelte'
   import SearchFilter from '$lib/search-filter.svelte'
+  import { toast } from '$lib/toast/toast'
+  import Toast from '$lib/toast/toast.svelte'
   import Toggle from '$lib/toggle.svelte'
 
   let isToggled = false
@@ -14,6 +16,16 @@
 </script>
 
 <h1>Welcome to SvelteKit UI</h1>
+
+<h2>Toast</h2>
+
+<Toast />
+
+<button on:click={() => (toast.send('Hello, world!'+Math.random()), false)}
+  >New toast</button
+>
+
+<hr />
 
 <h2>Modal</h2>
 
