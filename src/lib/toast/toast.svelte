@@ -1,9 +1,24 @@
 <script>
   import Portal from '$lib/portal.svelte'
   import { flip } from 'svelte/animate'
+  import { tweened } from 'svelte/motion'
   import { fade, fly } from 'svelte/transition'
   import { toast } from './toast'
+
+  let progress = tweened(0, 1, { duration: 1000 })
+
+  async function updateProgress() {
+    const newProgress = Math.random() * 100
+    await progress.set(newProgress)
+    toast.remove()
+  }
 </script>
+
+<h1>{$progress}</h1>
+<div
+  style={`width: ${$progress}%; height: 20px; background: rebeccapurple;`}
+/>
+<button on:click={updateProgress}>Whee</button>
 
 <Portal>
   <div class="wrapper">
