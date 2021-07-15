@@ -7,6 +7,7 @@
   import { toast } from '$lib/toast/toast'
   import Toast from '$lib/toast/toast.svelte'
   import Toggle from '$lib/toggle.svelte'
+  import ToolTip from '$lib/tool-tip.svelte'
 
   let isToggled = false
   let items = ['svelte', 'react', 'vue', 'angular']
@@ -16,6 +17,15 @@
 </script>
 
 <h1>Welcome to SvelteKit UI</h1>
+
+<h2>Tooltip</h2>
+
+<ToolTip title="this is a tooltip">
+  <Field value={0} type="number" />
+  <Field value="Hi" type="text" />
+</ToolTip>
+
+<hr />
 
 <h2>Toast 2</h2>
 
