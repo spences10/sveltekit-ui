@@ -17,6 +17,18 @@
 
 <h1>Welcome to SvelteKit UI</h1>
 
+<h2>Toast 2</h2>
+
+<Modal bind:isModalOpen backgrond={false}>
+  <Field value={0} type="number" />
+  <Field value="Hi" type="text" />
+</Modal>
+<button on:click={() => (isModalOpen = !isModalOpen)}
+  >Open Modal</button
+>
+
+<hr />
+
 <h2>Toast</h2>
 
 <Toast duration={3000} />
@@ -34,12 +46,13 @@
 <Modal {isModalOpen}>
   <Markdown bind:markdownText />
 </Modal>
-<button
-  on:click={() => (isModalOpen = !isModalOpen)}
-  on:blur={() => (isModalOpen = !isModalOpen)}>Open Modal</button
+<button on:click={() => (isModalOpen = !isModalOpen)}
+  >Open Modal</button
 >
 
-{isModalOpen}
+<p>
+  Is modal open: {isModalOpen}
+</p>
 
 <hr />
 
