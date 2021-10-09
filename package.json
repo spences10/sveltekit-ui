@@ -20,7 +20,7 @@
     "@storybook/svelte": "6.3.10",
     "@sveltejs/kit": "next",
     "babel-loader": "8.2.2",
-    "marked": "3.0.4",
+    "marked": "3.0.7",
     "prettier": "2.4.1",
     "prettier-plugin-svelte": "2.4.0",
     "svelte": "3.43.1",
