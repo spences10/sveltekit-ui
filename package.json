@@ -16,7 +16,7 @@
     "@storybook/addon-actions": "6.4.22",
     "@storybook/addon-essentials": "6.4.22",
     "@storybook/addon-links": "6.4.22",
-    "@storybook/addon-svelte-csf": "2.0.3",
+    "@storybook/addon-svelte-csf": "2.0.4",
     "@storybook/svelte": "6.4.22",
     "@sveltejs/kit": "next",
     "babel-loader": "8.2.5",
